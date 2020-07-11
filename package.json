@@ -1,0 +1,20 @@
+{
+  "name": "chat-server",
+  "version": "0.0.1",
+  "description": "Chat Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "chat",
+    "server"
+  ],
+  "author": "Ercan Ersoy",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  }
+}

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul id="messages"></ul>
+        <input id="message" autocomplete="off" />
+        <button onclick="send();">Send</button>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            let socket = io();
+
+            function send()
+            {
+                socket.emit('chat message', document.getElementById('message').value);
+                document.getElementById('message').value = '';
+            }
+        </script>
+    </body>
+</html>

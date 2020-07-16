@@ -1,5 +1,10 @@
 'use strict';
 
+console.log('Chat Server');
+console.log('Copyright (C) 2020 Ercan Ersoy (https://ercanersoy.net)');
+console.log('This software has licensed MIT License.');
+console.log();
+
 let express = require('express');
 let http = require('http');
 let socket_io = require('socket.io');
@@ -19,7 +24,8 @@ io.on('connection', (socket) => {
     socket.on('chat message', function(message) {
         io.emit('chat message', message);
         console.log(message);
-    })
+        socket.emit('messages', message);
+    });
 });
 
 http_server.listen(8080);

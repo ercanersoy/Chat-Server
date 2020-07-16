@@ -10,13 +10,20 @@
         <button onclick="send();">Send</button>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-            let socket = io();
+            const socket = io();
 
             function send()
             {
                 socket.emit('chat message', document.getElementById('message').value);
+
                 document.getElementById('message').value = '';
             }
+
+            socket.on('messages', function(message) {
+                li = document.createElement('li');
+                li.append(message);
+                document.getElementById('messages').appendChild(li);
+            });
         </script>
     </body>
 </html>

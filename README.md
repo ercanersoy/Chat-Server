@@ -6,7 +6,7 @@ Copyright (C) 2020 [Ercan Ersoy](https://ercanersoy.net)
 
 This software has been licensed by MIT License.
 
-## Requirements
+## Required Packages
 
 * express
 * socket.io
